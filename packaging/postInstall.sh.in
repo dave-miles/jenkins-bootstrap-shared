@@ -112,4 +112,8 @@ fi
 
 ${RPM_BASED} && ln -sf '/etc/init.d/@@ARTIFACTNAME@@' "${RPM_INSTALL_PREFIX}/sbin/rc@@ARTIFACTNAME@@"
 
+#disable upgrade wizard
+mkdir -p /usr/share/jenkins/ref/
+echo "@@ARTIFACTVERSION@@" > /usr/share/jenkins/ref/jenkins.install.UpgradeWizard.state
+
 exit 0

@@ -104,6 +104,10 @@ echo "Overwriting '${JENKINS_HOME}/dailycommit.sh'."
 cp -f "@@PREFIX@@/lib/@@ARTIFACTNAME@@/share/dailycommit.sh" "${JENKINS_HOME}/"
 chmod 755 "${JENKINS_HOME}/dailycommit.sh"
 
+#disable upgrade wizard
+mkdir -p /usr/share/jenkins/ref/
+echo "@@ARTIFACTVERSION@@" > /usr/share/jenkins/ref/jenkins.install.UpgradeWizard.state
+
 for x in ~/.bash_profile ~/.bashrc; do
   grep JENKINS_HOME "${x}" || echo "export JENKINS_HOME=\"${JENKINS_HOME}\"" >> "${x}"
 done
