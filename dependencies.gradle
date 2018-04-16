@@ -1,6 +1,6 @@
 dependencies {
     //get Jenkins
-    getjenkins 'org.jenkins-ci.main:jenkins-war:2.107.2@war'
+    getjenkins "org.jenkins-ci.main:jenkins-war:${tokens['ARTIFACTVERSION']}@war"
 
     //get plugins
     //getplugins configurations go here...
